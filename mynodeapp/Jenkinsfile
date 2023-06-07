@@ -11,7 +11,7 @@ pipeline {
 
         stage('Start application') {
             steps {
-                // Start your Node.js application
+                // Start my nodjs app
                 sh 'npm start'
             }
         }
