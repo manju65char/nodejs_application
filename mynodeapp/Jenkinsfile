@@ -1,40 +1,20 @@
 pipeline {
-  agent any
+    agent any
 
-  stages {
-    stage('Checkout') {
-      steps {
-        // Use Git or any other version control system to clone your repository
-           git 'https://github.com/your-repo.git'
-      }
-    }
+    stages {
+        stage('Checkout') {
+            steps {
+                // Get some code from a GitHub repository
+                git 'https://github.com/manju65char/nodejs_application.git'
+            }
+        }
 
-    stage('Install dependencies') {
-      steps {
-        // Install Node.js dependencies
-        sh 'npm install'
-      }
+        stage('Start application') {
+            steps {
+                // Start your Node.js application
+                sh 'npm start'
+            }
+        }
     }
-
-    stage('Build') {
-      steps {
-        // Build your Node.js application
-        sh 'npm run build'
-      }
-    }
-
-    stage('Test') {
-      steps {
-        // Run tests for your Node.js application
-        sh 'npm test'
-      }
-    }
-
-    stage('Start application') {
-      steps {
-        // Start your Node.js application
-        sh 'npm start'
-      }
-    }
-  }
 }
+
