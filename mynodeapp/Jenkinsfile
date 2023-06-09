@@ -9,12 +9,6 @@ pipeline {
             }
         }
 
-        stage('Start application') {
-            steps {
-                // Start my nodjs app
-                sh 'npm start'
-            }
-        }
     }
 }
 
